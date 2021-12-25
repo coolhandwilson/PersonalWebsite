@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+/* For Mobile Devices */
+* {
+  margin: 0;
+  background-color: black;
+  color: #008f11;
+  font-family: 'VT323', monospace;
+}
+/* Main Grid */
+body {
+  display: grid;
+  grid-template-columns: 15% 70% 15%;
+  grid-template-rows: 25% 60% 15%;
+  height: 100vh;
+}
+
+/* Header sub-grid */
+#title {
+  grid-column: 2 / 3;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 40% 25% 25% 10%;
+  text-align: center;
+}
+
+h1 {
+  grid-row: 2 / 3;
+}
+
+h3 {
+  grid-row: 3 / 4;
+}
+
+ul {
+  grid-row: 4 / 5;
+  list-style-type: none;
+}
+
+li {
+  display: inline;
+  padding: 0 5% 0 0;
+}
+
+
+/* For desktop */
+/* @media screen and (min-width: ???) {
+
+} */
