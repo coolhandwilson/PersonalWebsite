@@ -10,7 +10,7 @@
 /* Main Grid */
 body {
   display: grid;
-  grid-template-columns: 15% 70% 15%;
+  grid-template-columns: 10% 80% 10%;
   grid-template-rows: 25% 60% 15%;
   height: 100vh;
 }
@@ -28,18 +28,24 @@ h1 {
   grid-row: 2 / 3;
 }
 
-h3 {
+header h3 {
   grid-row: 3 / 4;
 }
 
 ul {
   grid-row: 4 / 5;
   list-style-type: none;
+  text-align: center;
 }
 
 li {
-  display: inline;
-  padding: 0 5% 0 0;
+  display: inline-block;
+  padding-right: 15%;
+}
+
+main h3 {
+  grid-column: 2 /3 ;
+  grid-row: 2 / 3;
 }
 
 
