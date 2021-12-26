@@ -16,7 +16,7 @@ body {
 }
 
 /* Header sub-grid */
-#title {
+header {
   grid-column: 2 / 3;
   display: grid;
   grid-template-columns: 100%;
