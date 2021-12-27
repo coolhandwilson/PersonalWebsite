@@ -43,6 +43,10 @@ main {
   grid-row: 2 / 3;
 }
 
+/* Cursor */
+/* .txt {
+  border-right: 0.2rem solid #fff;
+} */
 
 /* For desktop */
 /* @media screen and (min-width: ???) {

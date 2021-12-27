@@ -5,14 +5,26 @@
 // const headOne = "Greetings, User."
 const strList = [
   "Greetings, User",
-  "Welcome to Wilson's personal portfolio"
+  "Welcome to Wilson's personal portfolio",
+  "wil@profile:~ user$ ",
+  "Initializing profile   ",
+  "wil@profile:~ user$ ",
+  "Complete"
 ]
 
 const elementList = [
   "#First",
-  "#Second"
+  "#Second",
+  "#TermOne",
+  "#TermContentOne",
+  "#TermTwo",
+  "#TermContentTwo"
 ]
 
+const linkList = ["Github", "LinkedIn", "Resume"]
+
+// This is the global index variable that controls 
+// which item of each above list is being used
 let core = 0;
 
 // This is the list of class names that will be cycled through for typing/inserting
@@ -22,8 +34,7 @@ const MatrixType = function(textElement, string, typeTime = 1000, itemIndex) {
   this.textElement = textElement;
   this.string = string;
   // We start off with empty elements
-  this.text = '';
-  // this.wordIndex = 0;
+  this.text = document.querySelector(elementList[core]).innerHTML;
   this.typeTime = parseInt(typeTime, 10);
   this.itemIndex = itemIndex;
   this.typer();
@@ -42,17 +53,18 @@ MatrixType.prototype.typer = function() {
   
   // // add a character
   // this.text = currentWord.substring(0, this.text.length + 1);
-
-  console.log(this.textElement);
-
-  this.text = this.string.substring(0, this.text.length + 1);
-
+  if (strList[core] === "wil@profile:~ user$ ") {
+    this.text = "wil@profile:~ user$ ";
+  } else {
+    this.text = this.string.substring(0, this.text.length + 1);
+  }
+  
   //output our current text - instert .text into element
   let test = 'class=txt'
   this.textElement.innerHTML = `<span ${test}>${this.text}</span>`;
 
   // Type Speed
-  let typeSpeed = 300;
+  let typeSpeed = 225;
 
   // Check if the word is complete
   // if (this.text === currentWord) {
@@ -62,7 +74,7 @@ MatrixType.prototype.typer = function() {
   // }
   
   if (this.text != this.string) {
-    setTimeout(() => this.typer(), 500);
+    setTimeout(() => this.typer(), 300);
   } else {
     core++;
     if (core < strList.length) {
