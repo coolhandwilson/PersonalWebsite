@@ -35,12 +35,12 @@ classList = [
 ]
 
 // This is our main function - it runs our script.
-const MatrixType = function(textElement, string, typeTime = 1000, itemIndex) {
+const MatrixType = function(textElement, string, itemIndex) {
   this.textElement = textElement;
   this.string = string;
   // We start off with empty elements
   this.text = document.querySelector(elementList[core]).innerHTML;
-  this.typeTime = parseInt(typeTime, 10);
+  //this.typeTime = parseInt(typeTime, 10);
   this.itemIndex = itemIndex;
   this.typer();
   
@@ -96,11 +96,11 @@ MatrixType.prototype.typer = function() {
     core++;
     if (core < strList.length) {
       //Clear the DOM if terminal processes are 'complete' - simulate new screen
-      if (this.text.includes("Complete...")) {
+      if (this.text.includes("Complete")) {
         document.querySelectorAll(".container").forEach(content => content.innerHTML = "");  
       }
 
-      new MatrixType(document.querySelector(elementList[core]), strList[core], 1000, core);
+      new MatrixType(document.querySelector(elementList[core]), strList[core], core);
     }
   }
 
@@ -113,9 +113,9 @@ document.addEventListener('DOMContentLoaded', init);
 function init() {
   let textElement = document.querySelector(elementList[0]);
   let string = strList[0];
-  let typeTime = 1000;
+  //let typeTime = 1000;
   // Initialize MatrixType
-  new MatrixType(textElement, string, typeTime, 0);
+  new MatrixType(textElement, string, 0);
 
   // for (let i = 0; i < strList.length; i++) {
   //   console.log(i)
