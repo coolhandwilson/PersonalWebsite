@@ -16,11 +16,15 @@ const firstPageContents = [
   "wil@profile:~ user$ ",
   "Making cup of coffee... ",
   "wil@profile:~ user$ ",
-  "Processing data...",
+  "Initializing Directory... ",
   "wil@profile:~ user$ ",
-  "Finished processing. Initializing UI... ",
+  "Watering office plants... ",
   "wil@profile:~ user$ ",
-  "Page initialization complete! "
+  "Initialization protocols complete! ",
+  "wil@profile:~ user$ ",
+  "cd dataPacket ",
+  "wil@profile:~ user$ ",
+  "wil-personal-profile.exe "
 ]
 
 const firstPageElements = [
@@ -40,11 +44,17 @@ const firstPageElements = [
   "#TermContentFive",
   "#TermSix",
   "#TermContentSix",
+  "#TermSeven",
+  "#TermContentSeven",
+  "#TermEight",
+  "#TermContentEight",
 ]
 
 // Main Page Text and Element outputs
 const secondPageContents = [
-
+  "wil@profile:~ user$ ",
+  "cd dataPacket",
+  ""
 ]
 
 const SecondPageElements = [
@@ -104,7 +114,7 @@ MatrixType.prototype.typer = function() {
   this.textElement.innerHTML = `<span ${elementClass}>${this.text}</span>`;
 
   // Type Speed
-  let typeSpeed = 100;
+  let typeSpeed = 50;
 
   // This is used to pace the typing to simulate a computer processing info
   // If the current character is a period, the type speed is slowed down to show
@@ -128,7 +138,7 @@ MatrixType.prototype.typer = function() {
     contentIndex++;
     if (contentIndex < outputs[mainListIndex].length) {
       //Clear the DOM if terminal processes are 'complete' - simulate new screen
-      if (this.text.includes("omplete")) {
+      if (this.text.includes("omplete") | this.text.includes("exe")) {
         document.querySelectorAll(".container").forEach(content => content.innerHTML = "");  
       }
 
