@@ -4,7 +4,7 @@
 // These variables store all of the strings that will be typed out by MatrixType/Typer
 
 // Initial page and element output
-const strList = [
+const firstPageContents = [
   "wil@profile:~ user$ ",
   "Initializing profile creation protocol... ",
   "wil@profile:~ user$ ",
@@ -23,7 +23,7 @@ const strList = [
   "Page initialization complete! "
 ]
 
-const elementList = [
+const firstPageElements = [
   "#TermOne",
   "#TermContentOne",
   "#TermTwo",
@@ -43,29 +43,24 @@ const elementList = [
 ]
 
 // Main Page Text and Element outputs
-const pageContents = [
+const secondPageContents = [
 
 ]
 
-const pageElements = [
+const SecondPageElements = [
 
 ]
 
 //List of element lists
 const outputs = [
-  strList,
-  pageContents
+  firstPageContents,
+  secondPageContents
 ]
 
 const htmlElements = [
-  elementList,
-  pageElements
+  firstPageElements,
+  SecondPageElements
 ]
-
-// const mainPageElements = [
-//   "#TermOne",
-//   "#TermContentOne",
-// ]
 
 const linkList = ["Github", "LinkedIn", "Resume"]
 
@@ -87,7 +82,7 @@ const MatrixType = function(textElement, string) {
   this.textElement = textElement;
   this.string = string;
   // Grab contents of .container class spans
-  this.text = document.querySelector(elementList[contentIndex]).innerHTML;
+  this.text = document.querySelector(htmlElements[mainListIndex][contentIndex]).innerHTML;
   this.typer();
   
   
@@ -97,7 +92,7 @@ const MatrixType = function(textElement, string) {
 MatrixType.prototype.typer = function() {
   
   // No typing effect for terminal prompt text
-  if (strList[contentIndex] === "wil@profile:~ user$ ") {
+  if (outputs[mainListIndex][contentIndex] === "wil@profile:~ user$ ") {
     this.text = "wil@profile:~ user$ ";
 
   } else {
@@ -131,13 +126,13 @@ MatrixType.prototype.typer = function() {
   } else {
     //
     contentIndex++;
-    if (contentIndex < strList.length) {
+    if (contentIndex < outputs[mainListIndex].length) {
       //Clear the DOM if terminal processes are 'complete' - simulate new screen
       if (this.text.includes("omplete")) {
         document.querySelectorAll(".container").forEach(content => content.innerHTML = "");  
       }
 
-      new MatrixType(document.querySelector(elementList[contentIndex]), strList[contentIndex]);
+      new MatrixType(document.querySelector(htmlElements[mainListIndex][contentIndex]), outputs[mainListIndex][contentIndex]);
     }
   }
 
