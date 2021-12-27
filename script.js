@@ -13,17 +13,21 @@ const elementList = [
   "#Second"
 ]
 
+let core = 0;
+
 // This is the list of class names that will be cycled through for typing/inserting
 
 // This is our main function - it runs our script.
-const MatrixType = function(textElement, string, typeTime = 1000) {
+const MatrixType = function(textElement, string, typeTime = 1000, itemIndex) {
   this.textElement = textElement;
   this.string = string;
   // We start off with empty elements
   this.text = '';
-  this.wordIndex = 0;
+  // this.wordIndex = 0;
   this.typeTime = parseInt(typeTime, 10);
+  this.itemIndex = itemIndex;
   this.typer();
+  
   
 }
 
@@ -38,6 +42,8 @@ MatrixType.prototype.typer = function() {
   
   // // add a character
   // this.text = currentWord.substring(0, this.text.length + 1);
+
+  console.log(this.textElement);
 
   this.text = this.string.substring(0, this.text.length + 1);
 
@@ -56,7 +62,12 @@ MatrixType.prototype.typer = function() {
   // }
   
   if (this.text != this.string) {
-    setTimeout(() => this.typer(), 500)
+    setTimeout(() => this.typer(), 500);
+  } else {
+    core++;
+    if (core < strList.length) {
+      new MatrixType(document.querySelector(elementList[core]), strList[core], 1000, core);
+    }
   }
 
 }
@@ -66,16 +77,20 @@ document.addEventListener('DOMContentLoaded', init);
 
 // Initialize the page
 function init() {
-  console.log("hi");
-  for (let i = 0; i < strList.length; i++) {
-    console.log(i)
-    let textElement = document.querySelector(elementList[i]);
-    let string = strList[i];
-    let typeTime = 1000;
-    // Initialize MatrixType
-    new MatrixType(textElement, string, typeTime);
-  }
+  let textElement = document.querySelector(elementList[0]);
+  let string = strList[0];
+  let typeTime = 1000;
+  // Initialize MatrixType
+  new MatrixType(textElement, string, typeTime, 0);
 
+  // for (let i = 0; i < strList.length; i++) {
+  //   console.log(i)
+  //   let textElement = document.querySelector(elementList[i]);
+  //   let string = strList[i];
+  //   let typeTime = 1000;
+  //   // Initialize MatrixType
+  //   new MatrixType(textElement, string, typeTime);
+  // }
   
 
 }
