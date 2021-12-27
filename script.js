@@ -8,14 +8,18 @@ const strList = [
   "wil@profile:~ user$ ",
   "Initializing...",
   "wil@profile:~ user$ ",
-  "Complete"
+  "Complete...",
+  "wil@profile:~ user$ ",
+  "Securing packets from main hub."
 ]
 
 const elementList = [
   "#TermOne",
   "#TermContentOne",
   "#TermTwo",
-  "#TermContentTwo"
+  "#TermContentTwo",
+  "#TermOne",
+  "#TermContentOne"
 ]
 
 const linkList = ["Github", "LinkedIn", "Resume"]
@@ -82,11 +86,20 @@ MatrixType.prototype.typer = function() {
   // }
   
   if (this.text != this.string) {
+
+
+
     setTimeout(() => this.typer(), typeSpeed);
+
   } else {
     //
     core++;
     if (core < strList.length) {
+      //Clear the DOM if terminal processes are 'complete' - simulate new screen
+      if (this.text.includes("Complete...")) {
+        document.querySelectorAll(".container").forEach(content => content.innerHTML = "");  
+      }
+
       new MatrixType(document.querySelector(elementList[core]), strList[core], 1000, core);
     }
   }
