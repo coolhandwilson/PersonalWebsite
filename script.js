@@ -2,7 +2,16 @@
 // and expanding off it in an effort to learn more about JS and working with the DOM.
 
 // These variables store all of the strings that will be typed out by MatrixType/Typer
-const headOne = "Greetings, User."
+// const headOne = "Greetings, User."
+const strList = [
+  "Greetings, User",
+  "Welcome to Wilson's personal portfolio"
+]
+
+const elementList = [
+  "#First",
+  "#Second"
+]
 
 // This is the list of class names that will be cycled through for typing/inserting
 
@@ -57,9 +66,14 @@ document.addEventListener('DOMContentLoaded', init);
 
 // Initialize the page
 function init() {
-  const textElement = document.querySelector('.Type-Greet');
-  const string = headOne;
-  const typeTime = 1000;
-  // Initialize MatrixType
-  new MatrixType(textElement, string, typeTime);
+  console.log("hi");
+  for (let i = 0; i < strList.length; i++) {
+    console.log(i)
+    let textElement = document.querySelector(elementList[i]);
+    let string = strList[i];
+    let typeTime = 1000;
+    // Initialize MatrixType
+    new MatrixType(textElement, string, typeTime);
+  }
+
 }
