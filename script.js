@@ -3,18 +3,15 @@
 
 // These variables store all of the strings that will be typed out by MatrixType/Typer
 // const headOne = "Greetings, User."
+
 const strList = [
-  "Greetings, User",
-  "Welcome to Wilson's personal portfolio",
   "wil@profile:~ user$ ",
-  "Initializing profile   ",
+  "Initializing...",
   "wil@profile:~ user$ ",
   "Complete"
 ]
 
 const elementList = [
-  "#First",
-  "#Second",
   "#TermOne",
   "#TermContentOne",
   "#TermTwo",
@@ -28,6 +25,10 @@ const linkList = ["Github", "LinkedIn", "Resume"]
 let core = 0;
 
 // This is the list of class names that will be cycled through for typing/inserting
+classList = [
+  'class=title-text',
+  'class=txt'
+]
 
 // This is our main function - it runs our script.
 const MatrixType = function(textElement, string, typeTime = 1000, itemIndex) {
@@ -64,7 +65,14 @@ MatrixType.prototype.typer = function() {
   this.textElement.innerHTML = `<span ${test}>${this.text}</span>`;
 
   // Type Speed
-  let typeSpeed = 225;
+  let typeSpeed = 200;
+
+  // This is used to pace the typing to simulate a computer processing info
+  // If the current character is a period, the type speed is slowed down to show
+  // that information is 'loading'.
+  if (this.text.charAt(this.text.length - 1) === '.') {
+    typeSpeed = 1000;
+  }
 
   // Check if the word is complete
   // if (this.text === currentWord) {
@@ -74,8 +82,9 @@ MatrixType.prototype.typer = function() {
   // }
   
   if (this.text != this.string) {
-    setTimeout(() => this.typer(), 300);
+    setTimeout(() => this.typer(), typeSpeed);
   } else {
+    //
     core++;
     if (core < strList.length) {
       new MatrixType(document.querySelector(elementList[core]), strList[core], 1000, core);
