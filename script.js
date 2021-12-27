@@ -40,7 +40,6 @@ const MatrixType = function(textElement, string, itemIndex) {
   this.string = string;
   // We start off with empty elements
   this.text = document.querySelector(elementList[core]).innerHTML;
-  //this.typeTime = parseInt(typeTime, 10);
   this.itemIndex = itemIndex;
   this.typer();
   
@@ -49,12 +48,6 @@ const MatrixType = function(textElement, string, itemIndex) {
 
 //Typer Method
 MatrixType.prototype.typer = function() {
-  // Split the string into an array of words
-  // const mySentence = this.string.split(" ");
-  // // set index to zero (start of sentence)
-  // let currentIndex = 0;
-  // // store current word in var
-  // let currentWord = mySentence[currentIndex];
   
   // // add a character
   // this.text = currentWord.substring(0, this.text.length + 1);
@@ -78,13 +71,6 @@ MatrixType.prototype.typer = function() {
     typeSpeed = 1000;
   }
 
-  // Check if the word is complete
-  // if (this.text === currentWord) {
-  //   // If the word is complete, we move on to the next word in our string.
-  //   currentIndex++;
-  //   console.log(currentIndex);
-  // }
-  
   if (this.text != this.string) {
 
 
@@ -113,18 +99,10 @@ document.addEventListener('DOMContentLoaded', init);
 function init() {
   let textElement = document.querySelector(elementList[0]);
   let string = strList[0];
-  //let typeTime = 1000;
+
   // Initialize MatrixType
   new MatrixType(textElement, string, 0);
 
-  // for (let i = 0; i < strList.length; i++) {
-  //   console.log(i)
-  //   let textElement = document.querySelector(elementList[i]);
-  //   let string = strList[i];
-  //   let typeTime = 1000;
-  //   // Initialize MatrixType
-  //   new MatrixType(textElement, string, typeTime);
-  // }
   
 
 }
