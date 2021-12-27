@@ -3,6 +3,7 @@
 
 // These variables store all of the strings that will be typed out by MatrixType/Typer
 
+// Initial page and element output
 const strList = [
   "wil@profile:~ user$ ",
   "Initializing profile creation protocol... ",
@@ -41,10 +42,38 @@ const elementList = [
   "#TermContentSix",
 ]
 
+// Main Page Text and Element outputs
+const pageContents = [
+
+]
+
+const pageElements = [
+
+]
+
+//List of element lists
+const outputs = [
+  strList,
+  pageContents
+]
+
+const htmlElements = [
+  elementList,
+  pageElements
+]
+
+// const mainPageElements = [
+//   "#TermOne",
+//   "#TermContentOne",
+// ]
+
 const linkList = ["Github", "LinkedIn", "Resume"]
 
+//main list index number
+let mainListIndex = 0;
+
 // This is the global index variable that controls 
-// which item of each above list is being used
+// which item of each inner list is being used
 let contentIndex = 0;
 
 // This is the list of class names that will be cycled through for typing/inserting
@@ -119,8 +148,8 @@ document.addEventListener('DOMContentLoaded', init);
 
 // Initialize the page
 function init() {
-  let textElement = document.querySelector(elementList[0]);
-  let string = strList[0];
+  let textElement = document.querySelector(htmlElements[mainListIndex][contentIndex]);
+  let string = outputs[mainListIndex][contentIndex];
 
   // Initialize MatrixType
   new MatrixType(textElement, string);
