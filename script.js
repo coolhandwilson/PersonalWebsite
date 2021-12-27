@@ -54,12 +54,11 @@ classList = [
 ]
 
 // This is our main function - it runs our script.
-const MatrixType = function(textElement, string, itemIndex) {
+const MatrixType = function(textElement, string) {
   this.textElement = textElement;
   this.string = string;
   // Grab contents of .container class spans
   this.text = document.querySelector(elementList[contentIndex]).innerHTML;
-  this.itemIndex = itemIndex;
   this.typer();
   
   
@@ -109,7 +108,7 @@ MatrixType.prototype.typer = function() {
         document.querySelectorAll(".container").forEach(content => content.innerHTML = "");  
       }
 
-      new MatrixType(document.querySelector(elementList[contentIndex]), strList[contentIndex], contentIndex);
+      new MatrixType(document.querySelector(elementList[contentIndex]), strList[contentIndex]);
     }
   }
 
@@ -124,7 +123,7 @@ function init() {
   let string = strList[0];
 
   // Initialize MatrixType
-  new MatrixType(textElement, string, 0);
+  new MatrixType(textElement, string);
 
   
 
