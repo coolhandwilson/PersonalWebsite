@@ -38,7 +38,7 @@ classList = [
 const MatrixType = function(textElement, string, itemIndex) {
   this.textElement = textElement;
   this.string = string;
-  // We start off with empty elements
+  // Grab contents of .container class spans
   this.text = document.querySelector(elementList[core]).innerHTML;
   this.itemIndex = itemIndex;
   this.typer();
@@ -49,17 +49,17 @@ const MatrixType = function(textElement, string, itemIndex) {
 //Typer Method
 MatrixType.prototype.typer = function() {
   
-  // // add a character
-  // this.text = currentWord.substring(0, this.text.length + 1);
+  // No typing effect for terminal prompt text
   if (strList[core] === "wil@profile:~ user$ ") {
     this.text = "wil@profile:~ user$ ";
+
   } else {
     this.text = this.string.substring(0, this.text.length + 1);
   }
   
-  //output our current text - instert .text into element
-  let test = 'class=txt'
-  this.textElement.innerHTML = `<span ${test}>${this.text}</span>`;
+  //output our current text - instert .text into element with class
+  let elementClass = 'class=txt'
+  this.textElement.innerHTML = `<span ${elementClass}>${this.text}</span>`;
 
   // Type Speed
   let typeSpeed = 200;
