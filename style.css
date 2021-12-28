@@ -43,6 +43,11 @@ main {
   grid-row: 2 / 3;
 }
 
+/*Terminal Path text*/
+.terminal-txt {
+  color: blueviolet;
+}
+
 /* Cursor */
 /* .txt {
   border-right: 0.2rem solid #fff;
