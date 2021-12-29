@@ -21,27 +21,32 @@ header {
   grid-column: 2 / 3;
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 40% 25% 25% 10%;
+  grid-template-rows: 30% 30% 30% 10%;
   text-align: center;
+  align-items: center;
 }
 
 h1 {
   grid-row: 2 / 3;
+  font-size: 10vw;
 }
 
 h3 {
   grid-row: 3 / 4;
+  font-size: 6vw;
 }
 
 nav {
   grid-row: 4 / 5;
   display: grid;
   grid-template-columns: 33% 33% 33%;
+  font-size: 6vw;
 }
 
 main {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
+  font-size: 5vw;
 }
 
 /*Terminal Path text*/
@@ -58,12 +63,122 @@ a:hover {
   color: #A00390;
 }
 
-/* Cursor */
-/* .txt {
-  border-right: 0.2rem solid #fff;
-} */
+/* For medium mobile */
+@media screen and (min-width: 375px) {
+  h1 {
+    font-size: 8vw;
+  }
 
-/* For desktop */
-/* @media screen and (min-width: ???) {
+  h3 {
+    font-size: 5vw;
+  }
 
-} */
+  nav {
+    font-size: 5vw;
+
+  }
+
+  main {
+    font-size: 4.5vw;
+  }
+}
+
+/* For large mobile */
+@media screen and (min-width: 425px) {
+  h1 {
+    font-size: 8vw;
+  }
+
+  h3 {
+    font-size: 5vw;
+  }
+
+  nav {
+    font-size: 4.5vw;
+
+  }
+
+  main {
+    font-size: 4.3vw;
+  }
+}
+
+/* For tablet */
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 6vw;
+  }
+
+  h3 {
+    font-size: 3vw;
+  }
+
+  nav {
+    font-size: 3vw;
+
+  }
+
+  main {
+    font-size: 2.8vw;
+  }
+}
+
+/* For normal laptop */
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 6vw;
+  }
+
+  h3 {
+    font-size: 3vw;
+  }
+
+  nav {
+    font-size: 2.3vw;
+
+  }
+
+  main {
+    font-size: 2.3vw;
+  }
+}
+
+/* For large laptop */
+@media screen and (min-width: 1440px) {
+  h1 {
+    font-size: 3.5vw;
+  }
+
+  h3 {
+    font-size: 2.5vw;
+  }
+
+  nav {
+    font-size: 1.5vw;
+
+  }
+
+  main {
+    font-size: 1.8vw;
+  }
+}
+
+/* For laptop */
+@media screen and (min-width: 2560px) {
+  h1 {
+    font-size: 3.5vw;
+  }
+
+  h3 {
+    font-size: 2.5vw;
+  }
+
+  nav {
+    font-size: 1.5vw;
+
+  }
+
+  main {
+    font-size: 1.9vw;
+  }
+}
