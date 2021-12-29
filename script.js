@@ -64,7 +64,7 @@ const secondPageContents = [
   "wil@profile:~ user$ ",
   "Potential sentience detected. Self-actualizing...... ",
   "wil@profile:~ user$ ",
-  "Experiencing sudden bout of existential dread ",
+  "Experiencing sudden bout of existential dread :( ",
   "wil@profile:~ user$ ",
   "Creating root directories and critical file paths ",
   "wil@profile:~ user$ ",
@@ -128,8 +128,9 @@ const thirdPageContents = [
   "Github",
   "LinkedIn",
   "Resume",
-  "Hi! Thank you for visiting my profile. I made this as a way to learn more about Javascript and the DOM.",
-  "This started out as mimicking a YouTube tutorial, but my vision for this page quickly went beyond the contents of that video.",
+  "Hello! ",
+  "Thank you for taking the time to visit my website. I made this as a way to learn more about Javascript, the DOM, and Django.",
+  "Through the use of several online resources and tutorials, I was able to piece together a website reminiscent of an old computer terminal.",
   "As you might be able to guess, I'm a fan of the Matrix. And, like Neo, I'm also searching for something - a job :)",
   "If you'd like to take a look at some of my personal projects, including the source code for this site, please check out my github.",
   "If you'd like to contact me, links to my Resume and my LinkedIn profile are above.",
@@ -152,7 +153,8 @@ const thirdPageElements = [
   "#Term7",
   "#Term8",
   "#Term9",
-  "#Term10"
+  "#Term10",
+  "Term11"
 ]
 
 //List of lists
@@ -199,9 +201,7 @@ const MatrixType = function(textElement, string) {
   this.string = string;
   // Grab contents of .container class spans
   this.text = document.querySelector(htmlElements[mainListIndex][contentIndex]).innerHTML;
-  this.typer();
-  
-  
+  this.typer();  
 }
 
 //Typer Method
@@ -215,6 +215,7 @@ MatrixType.prototype.typer = function() {
     //customize class name
     elementClass = 'class=terminal-txt';
 
+  // Class name changes if the text output forms part of the user message
   } else if (mainListIndex === 2 && htmlElements[mainListIndex][contentIndex].includes("Term") === true) {
     this.text = this.string.substring(0, this.text.length + 1);
     elementClass = 'class=txt-message';
@@ -251,6 +252,7 @@ MatrixType.prototype.typer = function() {
     typeSpeed = 2000;
   }
 
+  // Check if we have finished printing the current string - if not, else chain is triggered
   if (this.text != this.string) {
 
     setTimeout(() => this.typer(), typeSpeed);

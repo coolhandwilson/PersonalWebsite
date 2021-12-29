@@ -49,6 +49,11 @@ main {
   color: #A00341 ;
 }
 
+/*Message to User*/
+.txt-message {
+  line-height: 1.5;
+}
+
 a:hover {
   color: #A00390;
 }
