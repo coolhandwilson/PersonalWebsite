@@ -4,7 +4,8 @@
 * {
   margin: 0;
   background-color: black;
-  color: #008f11;
+  /* color: #008f11; */
+  color: #009966;
   font-family: 'VT323', monospace;
 }
 /* Main Grid */
@@ -45,7 +46,11 @@ main {
 
 /*Terminal Path text*/
 .terminal-txt {
-  color: blueviolet;
+  color: #A00341 ;
+}
+
+a:hover {
+  color: #A00390;
 }
 
 /* Cursor */
