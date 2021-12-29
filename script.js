@@ -207,7 +207,7 @@ const MatrixType = function(textElement, string) {
 //Typer Method
 MatrixType.prototype.typer = function() {
   //default Class name
-  let elementClass = 'class=txt';
+  let elementClass = '';
   
   // No typing effect for terminal prompt text
   if (outputs[mainListIndex][contentIndex] === "wil@profile:~ user$ ") {
@@ -215,14 +215,19 @@ MatrixType.prototype.typer = function() {
     //customize class name
     elementClass = 'class=terminal-txt';
 
+  } else if (mainListIndex === 2 && htmlElements[mainListIndex][contentIndex].includes("Term") === true) {
+    this.text = this.string.substring(0, this.text.length + 1);
+    elementClass = 'class=txt-message';
+
   } else {
     this.text = this.string.substring(0, this.text.length + 1);
+    elementClass = 'class=txt'
   }
   
   //output our current text - insert .text into element with class
   //Allow for different elements to be injected into the html
   spanList = ['<span', '</span>']
-  anchorList = ['<a', '</a>']
+  anchorList = ['<a target="_blank"', '</a>']
 
   //Check whether the current string is present in a key list, add necessary data (if any) using index location
   if (webList.includes(this.string)) {
