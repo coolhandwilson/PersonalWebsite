@@ -155,8 +155,7 @@ const thirdPageElements = [
   "#Term8",
   "#Term9",
   "#Term10",
-  "Term11",
-  "Term12"
+  "#Term11",
 ]
 
 //List of lists
@@ -181,7 +180,7 @@ const webList = [
 const linkList = [
   "https://github.com/coolhandwilson",
   "https://www.linkedin.com/in/wilsonwscott/",
-  "placehold"
+  "./docs/test.pdf"
 ]
 
 //main list index number
@@ -192,10 +191,10 @@ let mainListIndex = 0;
 let contentIndex = 0;
 
 // This is the list of class names that will be cycled through for typing/inserting
-classList = [
-  'class=title-text',
-  'class=txt'
-]
+// classList = [
+//   'class=title-text',
+//   'class=txt'
+// ]
 
 // This is our main function - it runs our script.
 const MatrixType = function(textElement, string) {
