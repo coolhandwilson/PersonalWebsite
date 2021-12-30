@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+* {
+  margin: 0;
+  background-color: black;
+  color: #009966;
+  font-family: 'VT323', monospace;
+  text-align: center;
+  justify-items: center;
+}
+
+div {
+  padding-top: 50%;
+}
