@@ -183,18 +183,12 @@ const linkList = [
   "./docs/test.pdf"
 ]
 
-//main list index number
+//main list index counter - cycles through each list of lists
 let mainListIndex = 0;
 
-// This is the global index variable that controls 
-// which item of each inner list is being used
+// This is the global index variable that controls which item of each inner list is being used
 let contentIndex = 0;
 
-// This is the list of class names that will be cycled through for typing/inserting
-// classList = [
-//   'class=title-text',
-//   'class=txt'
-// ]
 
 // This is our main function - it runs our script.
 const MatrixType = function(textElement, string) {
@@ -207,16 +201,16 @@ const MatrixType = function(textElement, string) {
 
 //Typer Method
 MatrixType.prototype.typer = function() {
-  //default Class name
+  //initialize class name
   let elementClass = '';
-  
-  // No typing effect for terminal prompt text
+
+  // Class name changes if the text output forms part of the user message
   if (outputs[mainListIndex][contentIndex] === "wil@profile:~ user$ ") {
+    // No typing effect for terminal prompt text
     this.text = "wil@profile:~ user$ ";
     //customize class name
     elementClass = 'class=terminal-txt';
 
-  // Class name changes if the text output forms part of the user message
   } else if (mainListIndex === 2 && htmlElements[mainListIndex][contentIndex].includes("Term") === true) {
     this.text = this.string.substring(0, this.text.length + 1);
     elementClass = 'class=txt-message';
@@ -267,6 +261,7 @@ MatrixType.prototype.typer = function() {
       document.querySelectorAll(".container").forEach(content => content.innerHTML = "");  
     }
 
+    // if there are still other strings left in the current list of strings, call a new MatrixType for them
     if (contentIndex < outputs[mainListIndex].length) {
       
       new MatrixType(document.querySelector(htmlElements[mainListIndex][contentIndex]), outputs[mainListIndex][contentIndex]);
@@ -277,6 +272,7 @@ MatrixType.prototype.typer = function() {
       mainListIndex++;
       //reset inner index to zero
       contentIndex = 0;
+    
       if (mainListIndex < outputs.length) {
         new MatrixType(document.querySelector(htmlElements[mainListIndex][contentIndex]), outputs[mainListIndex][contentIndex]);
       }

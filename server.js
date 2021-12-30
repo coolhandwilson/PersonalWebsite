@@ -1,3 +1,6 @@
+//This was practice with node.js. Initially I had used some elements of express, but the goal of this project was to gain
+//a better understanding of node.js first before moving on to other tools.
+
 //import core node modules
 const http = require('http');
 const path = require('path');
