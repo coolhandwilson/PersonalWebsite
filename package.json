@@ -1,0 +1,26 @@
+{
+  "name": "personalwebsite",
+  "version": "1.0.0",
+  "description": "Personal Website  with Node",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coolhandwilson/PersonalWebsite.git"
+  },
+  "author": "Wilson Scott",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coolhandwilson/PersonalWebsite/issues"
+  },
+  "homepage": "https://github.com/coolhandwilson/PersonalWebsite#readme",
+  "dependencies": {
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
