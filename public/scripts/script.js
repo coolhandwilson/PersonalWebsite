@@ -129,11 +129,12 @@ const thirdPageContents = [
   "LinkedIn",
   "Resume",
   "Hello! ",
-  "Thank you for taking the time to visit my website. I made this as a way to learn more about Javascript, the DOM, and Django. ",
-  "Through the use of several online resources and tutorials, I was able to piece together a website reminiscent of an old computer terminal. ",
+  "I hope you enjoyed my little experiment. I made this as a way to learn more about Javascript, the DOM, and Node.JS. ",
+  "Through the use of several online resources and tutorials, I was able to create a website reminiscent of an old computer terminal. ",
   "As you might be able to guess, I'm a fan of the Matrix. And, like Neo, I'm also searching for something - a job :) ",
   "If you'd like to take a look at some of my personal projects, including the source code for this site, please check out my github. ",
   "If you'd like to contact me, links to my Resume and my LinkedIn profile are above. ",
+  "Thank you very much for taking the time to visit my website.",
   "Best regards, ",
   "Wilson"
 ]
@@ -154,7 +155,8 @@ const thirdPageElements = [
   "#Term8",
   "#Term9",
   "#Term10",
-  "Term11"
+  "Term11",
+  "Term12"
 ]
 
 //List of lists
