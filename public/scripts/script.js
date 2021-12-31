@@ -129,7 +129,7 @@ const thirdPageContents = [
   "LinkedIn",
   "Resume",
   "Hello! ",
-  "I hope you enjoyed my little experiment. I made this as a way to learn more about Javascript, the DOM, and Node.JS. ",
+  "I hope you enjoyed my little experiment. I made this as a way to learn more about JavaScript, the DOM, and Node.JS. ",
   "Through the use of several online resources and tutorials, I was able to create a website reminiscent of an old computer terminal. ",
   "As you might be able to guess, I'm a fan of the Matrix. And, like Neo, I'm also searching for something - a job :) ",
   "If you'd like to take a look at some of my personal projects, including the source code for this site, please check out my github. ",
