@@ -180,7 +180,7 @@ const webList = [
 const linkList = [
   "https://github.com/coolhandwilson",
   "https://www.linkedin.com/in/wilsonwscott/",
-  "./docs/test.pdf"
+  "./docs/Wscott_Resume.pdf"
 ]
 
 //main list index counter - cycles through each list of lists
