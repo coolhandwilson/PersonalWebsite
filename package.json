@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/coolhandwilson/PersonalWebsite#readme",
   "dependencies": {
+    "minimist": "^1.2.6",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
